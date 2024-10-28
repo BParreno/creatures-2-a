@@ -12,3 +12,14 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Creature {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  description String
+  origin      String
+  skills      String
+  weaknesses  String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
